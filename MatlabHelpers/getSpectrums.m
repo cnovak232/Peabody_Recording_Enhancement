@@ -41,6 +41,7 @@ if plotSpec
     ylabel('Frequency');
     xlabel('Time (s)');
     zlabel('Amp (dB)');
+    %ylim([1, 10e3])
     
     subplot(212);
     micDb = db( micMag );
@@ -48,11 +49,12 @@ if plotSpec
     title('Mic Spectrum');
     colorbar
     set(gca, 'YDir','normal')
-    cc = max(csDb(:))+[-100 0];
+    cc = max(micDb(:))+[-100 0];
     ax = gca;
     ax.CLim = cc;
     ylabel('Frequency');
     xlabel('Time (s)');
     zlabel('Magnitude (dB)');
+    %ylim([1, 10e3])
 
 end
